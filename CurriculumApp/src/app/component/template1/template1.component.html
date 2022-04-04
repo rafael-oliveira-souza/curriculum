@@ -1,0 +1,23 @@
+<div class="d-flex justify-content-center text-start text-white" *ngIf="curriculum">
+  <div class="col-4" [ngStyle]="defineBackground()">
+    <div class=" p-4">
+      <h1>{{curriculum.personal?.name}}</h1>
+      <h4>{{curriculum.personal?.office}}</h4>
+      <h4>{{curriculum.personal?.birthday | years }}</h4>
+    </div>
+    <div id="idContato">
+      <h3 class="darken">Contatos</h3>
+      <div class="p-4" *ngFor="let contact of curriculum.personal?.contacts">
+        <h5>{{contact.key}}</h5>
+        <small>{{contact.value}}</small> <br>
+      </div>
+    </div>
+  </div>
+  <div class="col p-4">
+
+    <h2>adsada</h2>
+  </div>
+</div>
+
+<!-- knowledges: KeyValue<string, string[]>[] = [];
+  languages: KeyValue<string, LanguageLevel>[] = []; -->

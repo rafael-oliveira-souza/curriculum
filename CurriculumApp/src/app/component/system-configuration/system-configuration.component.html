@@ -1,0 +1,17 @@
+<div class="" >
+  <h5>Selecione uma cor</h5>
+  <p-dropdown [options]="colors" (ngModelChange)="emitColor()" [(ngModel)]="selectedColors" optionLabel="name" class="row justify-content-center">
+      <ng-template pTemplate="selectedItem">
+        <div class="row justify-content-center" *ngIf="selectedColors">
+            <div class="col-2" [ngStyle]="{background: selectedColors.code}"></div>
+            <div class="col">{{selectedColors.name}}</div>
+        </div>
+    </ng-template>
+    <ng-template let-color pTemplate="item">
+      <div class="row justify-content-center" >
+          <div class="col-2" [ngStyle]="{background: color.code}"></div>
+          <div class="col">{{color.name}}</div>
+      </div>
+    </ng-template>
+  </p-dropdown>
+</div>

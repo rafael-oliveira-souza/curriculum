@@ -1,0 +1,8 @@
+<div class="row justify-content-center">
+  <button pButton pRipple label="Gerar Curriculo" icon="pi pi-download" class="col-4 p-button-primary "
+    (click)="generate()" [disabled]="false"> </button>
+</div>
+
+<div class="container" *ngIf="showPdf">
+  <app-template1 [curriculum]="curriculum"></app-template1>
+</div>
