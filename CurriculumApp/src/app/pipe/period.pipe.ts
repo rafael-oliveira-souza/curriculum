@@ -2,7 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { DateUtils } from '../domain/Utils';
 
 @Pipe({
-  name: 'years'
+  name: 'period'
 })
 export class YearsPipe implements PipeTransform {
 

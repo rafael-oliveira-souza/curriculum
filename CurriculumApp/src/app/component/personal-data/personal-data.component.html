@@ -39,7 +39,10 @@
         <ng-template pTemplate="content">
           <div class="col-12 row justify-content-center mb-3" >
             <div class="col-4"><input [(ngModel)]="language.key"/></div>
-            <div class="col-4"><input [(ngModel)]="language.value"/></div>
+            <div class="col-4">
+              <p-dropdown [options]="languages" [(ngModel)]="language.value"  class="col-12 row justify-content-center">
+              </p-dropdown>
+            </div>
             <button pButton pRipple label="Incluir" icon="pi pi-plus" class="col-2 p-button-success mr-2"
              (click)="create(personal.languages, language)"></button>
           </div>

@@ -1,6 +1,5 @@
-import { ElementRef, Input, ViewChild } from '@angular/core';
+import { ElementRef, Input, SimpleChanges, ViewChild } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
-import { Curriculum } from 'src/app/domain/Models';
 
 @Component({
   selector: 'app-curriculum-generator',
@@ -8,11 +7,8 @@ import { Curriculum } from 'src/app/domain/Models';
   styleUrls: ['./curriculum-generator.component.css']
 })
 export class CurriculumGeneratorComponent implements OnInit {
-  @ViewChild('pdfTable') 
-  pdfTable: ElementRef | undefined;
-
-  @Input()
-  curriculum: Curriculum = new Curriculum();
+  @ViewChild('content', { static: false })
+  content: ElementRef | any;
 
   showPdf: boolean = false;
 
@@ -21,9 +17,17 @@ export class CurriculumGeneratorComponent implements OnInit {
   ngOnInit() {
   }
 
-  generate(){
-    console.log(this.curriculum);
+  generate() {
     this.showPdf = true;
+    window.print();
   }
 
+  // public SavePDF(): void {
+  //   let content = this.content.nativeElement;
+  //   let name = this?.curriculum?.personal?.name;
+
+  //   const doc = new jsPDF();
+  //   doc.text(content.firstChild.innerHTML, 10, 10);
+  //   doc.save( name ? name : "Curriculum" + ".pdf");
+  // }
 }

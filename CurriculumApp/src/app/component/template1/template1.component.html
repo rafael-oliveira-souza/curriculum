@@ -1,23 +1,96 @@
-<div class="d-flex justify-content-center text-start text-white" *ngIf="curriculum">
-  <div class="col-4" [ngStyle]="defineBackground()">
-    <div class=" p-4">
-      <h1>{{curriculum.personal?.name}}</h1>
-      <h4>{{curriculum.personal?.office}}</h4>
-      <h4>{{curriculum.personal?.birthday | years }}</h4>
+<div id="content" #content>
+  <div class="row justify-content-center ">
+    <div *ngIf="personal" class="col-4 text-start text-white"  [ngStyle]="config">
+      <div>
+        <div class="pd ">
+          <h1>{{personal.name}}</h1>
+          <h5>{{personal.office}}</h5>
+          <h5 class="">{{personal.birthday | years }}</h5>
+        </div>
+        <div id="idContato" *ngIf="personal.contacts && personal.contacts.length > 0">
+          <h3 class="realce" [ngStyle]="backgroundSecundary">Contatos</h3>
+          <div class="pd" *ngFor="let contact of personal?.contacts">
+            <h6><b>{{contact.key}}</b></h6>
+            <small>{{contact.value}}</small>
+          </div>
+        </div>
+        <div id="idLinguagem" *ngIf="personal.languages && personal.languages.length > 0">
+          <h3 class="realce" [ngStyle]="backgroundSecundary">Linguagens</h3>
+          <div class="pd" *ngFor="let contact of personal?.languages">
+            <h6><b>{{contact.key}}</b></h6>
+            <small>{{contact.value}}</small>
+          </div>
+        </div>
+        <div id="idConhecimento" *ngIf="personal.knowledges && personal.knowledges.length > 0">
+          <h3 class="realce" [ngStyle]="backgroundSecundary">Conhecimentos</h3>
+          <div class="pd" *ngFor="let contact of personal?.knowledges">
+            <h6><b>{{contact.key}}</b></h6>
+            <small>{{contact.value}}</small>
+          </div>
+        </div>
+      </div>
     </div>
-    <div id="idContato">
-      <h3 class="darken">Contatos</h3>
-      <div class="p-4" *ngFor="let contact of curriculum.personal?.contacts">
-        <h5>{{contact.key}}</h5>
-        <small>{{contact.value}}</small> <br>
+    <div class="col ">
+      <div id="idPerfil" class="pd mb-3 mt-1">
+        <small *ngIf="personal">{{personal.profile}}</small>
+      </div>
+      <div id="idEducacao">
+        <div class="subtitle">
+          <h3 [ngStyle]="colorPrimary">Educação</h3>
+        </div>
+        <div class="pd" *ngFor="let ed of educations">
+          <div class="row justify-content-center mt-4 text-start">
+            <small class="col-2 mt-1">
+              <small>{{getPeriod(ed.startDate, ed.endDate)}}</small>
+            </small>
+            <div class="col-1"></div>
+            <div class="col">
+              <h5>{{ed.name}}</h5>
+              <small>{{ed.institution}}</small><br>
+              <small>{{ed.address}}</small><br>
+              <small>{{ed.situation}}</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="idExperiencia" class="mt-4">
+        <div class="subtitle">
+          <h3 [ngStyle]="colorPrimary">Experiência</h3>
+        </div>
+        <div class="pd" *ngFor="let exp of experiences">
+          <div class="row justify-content-center mt-4 text-start">
+            <small class="col-2 mt-1">
+              <small>{{getPeriod(exp.startDate, exp.endDate)}}</small>
+            </small>
+            <div class="col-1"></div>
+            <div class="col">
+              <h5>{{exp.institution}}</h5>
+              <small>{{exp.address}}</small><br>
+              <small>{{exp.description}}</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="idCertificado" class="mt-4 mb-4">
+        <div class="subtitle">
+          <h3 [ngStyle]="colorPrimary">Certificado</h3>
+        </div>
+        <div class="pd" *ngFor="let exp of certificates">
+          <div class="row justify-content-center mt-4 text-start">
+            <small class="col-2 p-2">
+              <small>{{getPeriod(exp.startDate, exp.endDate)}}</small>
+            </small>
+            <div class="col-1"></div>
+            <div class="col">
+              <h5 >{{exp.name}}</h5>
+              <small>{{exp.address}}</small><br>
+              <small>{{exp.description}}</small>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="col p-4">
-
-    <h2>adsada</h2>
-  </div>
 </div>
-
 <!-- knowledges: KeyValue<string, string[]>[] = [];
   languages: KeyValue<string, LanguageLevel>[] = []; -->

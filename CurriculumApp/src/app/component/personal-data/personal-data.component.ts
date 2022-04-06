@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MessageService } from 'primeng/api';
+import { LanguageLevel } from 'src/app/domain/Enums';
 import { KeyValue, Personal } from 'src/app/domain/Models';
 
 @Component({
@@ -15,9 +16,10 @@ export class PersonalDataComponent implements OnInit {
   @Output()
   public personalChange = new EventEmitter<Personal>();
 
+  public languages = Object.values(LanguageLevel);
   
   public knowledge: KeyValue<string, string> = new KeyValue("", "");
-  public language: KeyValue<string, string> = new KeyValue("", "");
+  public language: KeyValue<string, LanguageLevel> = new KeyValue("", LanguageLevel.NONE);
   public contact: KeyValue<string, string> = new KeyValue("", "");
   
   constructor(private messageService: MessageService) {}

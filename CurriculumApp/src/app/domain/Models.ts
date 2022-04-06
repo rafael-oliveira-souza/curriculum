@@ -12,10 +12,10 @@ export class KeyValue<T, R> {
 }
 
 export class Personal {
-    name: string = '';
-    office: string = '';
-    profile: string = '';
-    birthday: Date | undefined;
+    name: string | undefined = '';
+    office: string | undefined = '';
+    profile: string | undefined = '';
+    birthday: Date | null = null;
     contacts: KeyValue<string, string>[] = [];
     knowledges: KeyValue<string, string[]>[] = [];
     languages: KeyValue<string, LanguageLevel>[] = [];
@@ -26,9 +26,10 @@ export class Personal {
 export class Education {
     institution: string = '';
     address: string = '';
+    name: string = '';
     situation: EducationalSituation | undefined;
-    startDate: Date | undefined;
-    endDate: Date | undefined;
+    startDate: Date | null = null;
+    endDate: Date | null = null;
 
     constructor(){}
 }
@@ -39,8 +40,8 @@ export class Experience {
     address: string = '';
     description: string = '';
     office: string = '';
-    startDate: Date | undefined;
-    endDate: Date | undefined;
+    startDate: Date | null = null;
+    endDate: Date | null = null;
 
     constructor(){}
 }
@@ -50,8 +51,8 @@ export class Certificate {
     name: string = '';
     address: string = '';
     description: string = '';
-    startDate: Date | undefined;
-    endDate: Date | undefined;
+    startDate: Date | null = null;
+    endDate: Date | null = null;
 
     constructor(){}
 }
@@ -59,18 +60,20 @@ export class Certificate {
 
 export class Configuration {
     color: Color | undefined;
+    font: {name: string, sub: string, font: string};
 
-    constructor(color: Color ){
+    constructor(color: Color, font: {name: string, sub: string, font: string} ){
         this.color = color;
+        this.font = font;
     }
 }
 
 export class Curriculum {
-    personal: Personal | undefined;
+    personal: Personal | null = null;
     certificates: Certificate[] = [];
     experiences: Experience[] = [];
     educations: Education[] = [];
-    configurations: Configuration | undefined;
+    configurations: Configuration | null = null;
 
     constructor(){}
 }

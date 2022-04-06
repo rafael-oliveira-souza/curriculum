@@ -6,6 +6,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ComponentModule } from './component/component.module';
+import { SystemService } from './service/system.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { ComponentModule } from './component/component.module';
     
     ComponentModule,
   ],
-  providers: [],
+  providers: [SystemService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
