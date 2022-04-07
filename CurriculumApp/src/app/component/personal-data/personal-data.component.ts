@@ -10,6 +10,7 @@ import { KeyValue, Personal } from 'src/app/domain/Models';
 })
 export class PersonalDataComponent implements OnInit {
 
+  val: number = 3;
   @Input()
   public personal: Personal = new Personal();
 

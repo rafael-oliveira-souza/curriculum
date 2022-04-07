@@ -2,6 +2,8 @@
   <p-toolbar styleClass="mb-4">
     <ng-template pTemplate="left">
       <h5>Dados Pessoais</h5>
+    <p-rating class="text-warning" [(ngModel)]="val" [disabled]="true" [cancel]="false"></p-rating>
+
     </ng-template>
   </p-toolbar>
   <div class="container-fluid">

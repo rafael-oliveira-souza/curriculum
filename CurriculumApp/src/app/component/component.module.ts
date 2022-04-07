@@ -21,6 +21,7 @@ import { TableKeyValueComponent } from "./table-key-value/table-key-value.compon
 import { CurriculumGeneratorComponent } from "./curriculum-generator/curriculum-generator.component";
 import { YearsPipe } from "../pipe/years.pipe";
 import { Template1Component } from "./template1/template1.component";
+import {RatingModule} from 'primeng/rating';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { Template1Component } from "./template1/template1.component";
 		ReactiveFormsModule,
 		FormsModule,
 		CommonModule,
+    RatingModule,
 
     //PrimeNG
     DropdownModule,
@@ -70,6 +72,8 @@ import { Template1Component } from "./template1/template1.component";
     ToastModule,
     CalendarModule,
     AccordionModule,
+    
+    RatingModule,
 
     YearsPipe
 	],

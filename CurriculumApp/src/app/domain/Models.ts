@@ -16,6 +16,7 @@ export class Personal {
     office: string | undefined = '';
     profile: string | undefined = '';
     birthday: Date | null = null;
+    skills: KeyValue<string, number>[] = [];
     contacts: KeyValue<string, string>[] = [];
     knowledges: KeyValue<string, string[]>[] = [];
     languages: KeyValue<string, LanguageLevel>[] = [];

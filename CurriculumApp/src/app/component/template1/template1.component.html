@@ -3,22 +3,30 @@
     <div *ngIf="personal" class="col-4 text-start text-white"  [ngStyle]="config">
       <div>
         <div class="pd ">
-          <h1>{{personal.name}}</h1>
-          <h5>{{personal.office}}</h5>
-          <h5 class="">{{personal.birthday | years }}</h5>
+          <p class="title-name">{{personal.name}}</p>
+          <h4>{{personal.office}}</h4>
+          <!-- <h4 class="">{{personal.birthday | years }}</h4> -->
         </div>
         <div id="idContato" *ngIf="personal.contacts && personal.contacts.length > 0">
           <h3 class="realce" [ngStyle]="backgroundSecundary">Contatos</h3>
           <div class="pd" *ngFor="let contact of personal?.contacts">
             <h6><b>{{contact.key}}</b></h6>
-            <small>{{contact.value}}</small>
+            <small *ngIf="isLinkedIn(contact.key)" class="break-all">{{contact.value}}</small>
+            <small *ngIf="!isLinkedIn(contact.key)">{{contact.value}}</small><br>
           </div>
         </div>
         <div id="idLinguagem" *ngIf="personal.languages && personal.languages.length > 0">
           <h3 class="realce" [ngStyle]="backgroundSecundary">Linguagens</h3>
           <div class="pd" *ngFor="let contact of personal?.languages">
             <h6><b>{{contact.key}}</b></h6>
-            <small>{{contact.value}}</small>
+            <small>{{contact.value}}</small><br>
+          </div>
+        </div>
+        <div id="idHabilidades" *ngIf="personal.skills && personal.skills.length > 0">
+          <h3 class="realce" [ngStyle]="backgroundSecundary">Habilidades</h3>
+          <div class="pd" *ngFor="let contact of personal?.skills">
+            <h6><b>{{contact.key}}</b></h6>
+            <p-rating class="text-warning" [(ngModel)]="contact.value" [disabled]="true" [cancel]="false"></p-rating>
           </div>
         </div>
         <div id="idConhecimento" *ngIf="personal.knowledges && personal.knowledges.length > 0">
@@ -34,7 +42,7 @@
       <div id="idPerfil" class="pd mb-3 mt-1">
         <small *ngIf="personal">{{personal.profile}}</small>
       </div>
-      <div id="idEducacao">
+      <div id="idEducacao" class="mt-2">
         <div class="subtitle">
           <h3 [ngStyle]="colorPrimary">Educação</h3>
         </div>
@@ -53,7 +61,7 @@
           </div>
         </div>
       </div>
-      <div id="idExperiencia" class="mt-4">
+      <div id="idExperiencia" class="mt-5">
         <div class="subtitle">
           <h3 [ngStyle]="colorPrimary">Experiência</h3>
         </div>
@@ -71,9 +79,9 @@
           </div>
         </div>
       </div>
-      <div id="idCertificado" class="mt-4 mb-4">
+      <div id="idCertificado" class="mt-5 mb-4">
         <div class="subtitle">
-          <h3 [ngStyle]="colorPrimary">Certificado</h3>
+          <h3 [ngStyle]="colorPrimary">Certificação</h3>
         </div>
         <div class="pd" *ngFor="let exp of certificates">
           <div class="row justify-content-center mt-4 text-start">
