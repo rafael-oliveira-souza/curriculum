@@ -1,5 +1,5 @@
-import { LanguageLevel, EducationalSituation } from "./Enums";
-import { Certificate, Curriculum, Education, Experience, KeyValue, Personal } from "./Models";
+import { LanguageLevel, EducationalSituation } from "../Enums";
+import { Curriculum, Personal, KeyValue, Education, Experience, Certificate } from "../Models";
 
 export class CurriculumFlavia {
 

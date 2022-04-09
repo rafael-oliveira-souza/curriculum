@@ -1,7 +1,7 @@
 import { ElementRef, EventEmitter, Output, SimpleChange, SimpleChanges, ViewChild } from '@angular/core';
 import { Component, Input, OnInit } from '@angular/core';
-import { CurriculumFlavia } from 'src/app/domain/CurriculumFlavia';
-import { EducationalSituation, LanguageLevel } from 'src/app/domain/Enums';
+import { CurriculumFlavia } from 'src/app/domain/examples/CurriculumFlavia';
+import { CurriculumRafael } from 'src/app/domain/examples/CurriculumRafael';
 import { Certificate, Configuration, Curriculum, Education, Experience, KeyValue, Personal } from 'src/app/domain/Models';
 import { DateUtils } from 'src/app/domain/Utils';
 import { SystemService } from 'src/app/service/system.service';
@@ -43,7 +43,7 @@ export class Template1Component implements OnInit {
   }
 
   private _updateCurriculum() {
-    this.curriculum = CurriculumFlavia.get();
+    this.curriculum = CurriculumRafael.get();
 
     this.curriculum.configurations = this.configurations;
     this.personal = this.curriculum.personal;
