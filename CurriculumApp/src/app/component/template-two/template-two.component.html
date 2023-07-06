@@ -1,0 +1,115 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div id="content" #content [ngStyle]="configScreen">
+  <div class="row justify-content-center ">
+    <div *ngIf="personal" class="col-12 text-start text-white">
+      <div [ngStyle]="config">
+        <div class="pd ">
+          <p class="title-name">{{personal.name}}</p>
+          <h4>{{personal.office | titlecase}}</h4>
+          <!-- <h4 class="">{{personal.birthday  | years }}</h4> -->
+        </div>
+        <div id="idContato" *ngIf="personal.contacts && personal.contacts.length > 0"
+          class="container row justify-content-start mt-5">
+          <div class="col-8" *ngFor="let contact of personal?.contacts">
+            <!-- <small *ngIf="isLinkedIn(contact.key)" class="break-all">{{contact.value }}</small> -->
+            <small *ngIf="!isLinkedIn(contact.key)">{{contact.value}}</small><br>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 text-start mt-2" [ngStyle]="colorPrimary">
+      <h3 isText="true" class="realce" [ngStyle]="backgroundSecundary">{{labels['perfil'] | titlecase}}</h3>
+      <div id="idPerfil" class="p-2 mb-3 mt-1">
+        <small *ngIf="personal" isText="true">{{personal.profile}}</small>
+      </div>
+    </div>
+    <div *ngIf="personal" class="col-4 text-start" [ngStyle]="colorPrimary">
+      <div>
+        <div id="idLinguagem" *ngIf="personal.languages && personal.languages.length > 0">
+          <h3 isText="true" class="realce" [ngStyle]="backgroundSecundary">{{labels['linguagens'] | titlecase}}</h3>
+          <div class="pd" *ngFor="let contact of personal?.languages">
+            <h6><b>{{contact.key | titlecase}}</b></h6>
+            <small>{{contact.value}}</small><br>
+          </div>
+        </div>
+        <div id="idHabilidades" *ngIf="personal.skills && personal.skills.length > 0">
+          <h3 isText="true" class="realce" [ngStyle]="backgroundSecundary">{{labels['habilidades'] | titlecase}}</h3>
+          <div class="pd" *ngFor="let contact of personal?.skills">
+            <h6><b>{{contact.key | titlecase}}</b></h6>
+          </div>
+        </div>
+        <div id="idConhecimento" *ngIf="personal.knowledges && personal.knowledges.length > 0">
+          <h3 class="realce" [ngStyle]="backgroundSecundary" isText="true">{{labels['conhecimentos'] | titlecase}}</h3>
+          <div class="pd" *ngFor="let contact of personal?.knowledges">
+            <h6><b>{{contact.key | titlecase}}</b></h6>
+            <ul>
+              <li *ngFor="let val of contact.value">
+                <small>{{val}}</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col ">
+      <div id="idEducacao" class="mt-2">
+        <div class="subtitle">
+          <h3 [ngStyle]="colorPrimary" isText="true">{{labels['educacao'] | titlecase}}</h3>
+        </div>
+        <div class="pd" *ngFor="let ed of educations">
+          <div class="row justify-content-center mt-4 text-start">
+            <small class="col-2 mt-1">
+              <small>{{getPeriod(ed.startDate, ed.endDate)}}</small>
+            </small>
+            <div class="col-1"></div>
+            <div class="col">
+              <h5>{{ed.name | titlecase}}</h5>
+              <small>{{ed.institution}}</small><br>
+              <small>{{ed.address}}</small><br>
+              <small>{{ed.situation}}</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="idExperiencia" class="mt-5">
+        <div class="subtitle">
+          <h3 [ngStyle]="colorPrimary" isText="true">{{labels['experiencias'] | titlecase}}</h3>
+        </div>
+        <div class="pd" *ngFor="let exp of experiences">
+          <div class="row justify-content-center mt-4 text-start">
+            <small class="col-2 mt-1">
+              <small>{{getPeriod(exp.startDate, exp.endDate)}}</small>
+            </small>
+            <div class="col-1"></div>
+            <div class="col">
+              <h5>{{exp.institution | titlecase}}</h5>
+              <small> <b>{{exp.office}}</b></small><br>
+              <small>{{exp.address}}</small><br>
+              <small>{{exp.description}}</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="idCertificado" class="mt-5 mb-4">
+        <div class="subtitle">
+          <h3 [ngStyle]="colorPrimary" isText="true">{{labels['certificados'] | titlecase}}</h3>
+        </div>
+        <div class="pd" *ngFor="let exp of certificates">
+          <div class="row justify-content-center mt-4 text-start">
+            <small class="col-2 p-2">
+              <small>{{getPeriod(exp.startDate, exp.endDate)}}</small>
+            </small>
+            <div class="col-1"></div>
+            <div class="col">
+              <h5>{{exp.name | titlecase}}</h5>
+              <small>{{exp.address}}</small><br>
+              <small>{{exp.description}}</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- knowledges: KeyValue<string, string[]>[] = [];
+  languages: KeyValue<string, LanguageLevel>[] = []; -->

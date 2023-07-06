@@ -1,29 +1,17 @@
-<div class="container text-center">
+<div class="">
+
   <div class="noPrint">
-    <h2 class="p-5">Bem vindo ao Curriculum</h2>
-    <p-accordion>
-      <p-accordionTab header="Meus Dados ">
-        <app-personal-data class="" (personalChange)="updatePersonalData($event)"></app-personal-data>
-      </p-accordionTab>
-      <p-accordionTab header="Minha Educação">
-        <app-education-data class="" (educationsChange)="updateEducations($event)"></app-education-data>
-      </p-accordionTab>
-      <p-accordionTab header="Minhas Experiências ">
-        <app-experience-data class="" (experiencesChange)="updateExperiences($event)"></app-experience-data>
-      </p-accordionTab>
-      <p-accordionTab header="Meus Certificados ">
-        <app-certificates-data class="" (certificatesChange)="updateCertificates($event)"></app-certificates-data>
-      </p-accordionTab>
-      <p-accordionTab header="Configurações do Sistema ">
-        <div class="row justify-content-center">
-          <app-system-configuration class="col-4" (configurationChange)="updateConfig($event)">
-          </app-system-configuration>
-        </div>
-      </p-accordionTab>
-    </p-accordion>
+    <!-- <h1 class="text-center">Curriculum App</h1> -->
+    <app-configuration> </app-configuration>
+  </div>
+
+  <div class="container p-4  ">
+    <!-- <app-template-one></app-template-one> -->
+    <!-- <app-template-two></app-template-two> -->
+    <app-template-three></app-template-three>
   </div>
   <app-curriculum-generator class="p-2"></app-curriculum-generator>
+
 </div>
 
-<p-toast position="top-right"></p-toast>
 <router-outlet></router-outlet>

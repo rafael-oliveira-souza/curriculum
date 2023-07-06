@@ -18,3 +18,9 @@ export enum LanguageLevel{
     INTERMEDIARIO = "Intermediário",
     AVANCADO = "Avançado"
 }
+
+export enum LanguageEnum{
+  PORTUGUES = 'pt',
+  INGLES = 'en',
+  ESPANHOL = 'es'
+}

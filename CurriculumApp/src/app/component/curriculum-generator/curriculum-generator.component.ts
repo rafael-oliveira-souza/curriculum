@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-curriculum-generator',
   templateUrl: './curriculum-generator.component.html',
-  styleUrls: ['./curriculum-generator.component.css']
+  styleUrls: ['./curriculum-generator.component.scss']
 })
 export class CurriculumGeneratorComponent implements OnInit {
   @ViewChild('content', { static: false })
@@ -17,7 +17,11 @@ export class CurriculumGeneratorComponent implements OnInit {
   ngOnInit() {
   }
 
+
   generate() {
+
+    debugger
+    // Read HTML Template
     this.showPdf = true;
     window.print();
   }
