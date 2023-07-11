@@ -51,7 +51,7 @@
           <h3 [ngStyle]="colorPrimary" isText="true">{{labels['educacao'] | titlecase}}</h3>
         </div>
         <div class="pd" *ngFor="let ed of educations">
-          <div class="row justify-content-center mt-4 text-start">
+          <div class="row justify-content-center mt-4 text-start" [ngStyle]="fontConfig">
             <small class="col-2 mt-1">
               <small>{{getPeriod(ed.startDate, ed.endDate)}}</small>
             </small>
@@ -70,7 +70,7 @@
           <h3 [ngStyle]="colorPrimary" isText="true">{{labels['experiencias'] | titlecase}}</h3>
         </div>
         <div class="pd" *ngFor="let exp of experiences">
-          <div class="row justify-content-center mt-4 text-start">
+          <div class="row justify-content-center mt-4 text-start" [ngStyle]="fontConfig">
             <small class="col-2 mt-1">
               <small>{{getPeriod(exp.startDate, exp.endDate)}}</small>
             </small>

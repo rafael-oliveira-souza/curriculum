@@ -61,8 +61,11 @@ export class Constants {
 
   static configuration: Configuration = new Configuration(Constants.colors[0], Constants.fonts[0], Constants.languages[0]);
 
-  static curriculum(): Curriculum {
-    const curr = new Curriculum();
+  static curriculum(curr = null): Curriculum {
+    if (curr == null) {
+      curr = new Curriculum();
+    }
+
     curr.configurations = Constants.configuration;
 
     return curr;

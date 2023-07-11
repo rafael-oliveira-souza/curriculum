@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Constants } from './domain/Contants';
+import { CurriculumRafael } from './domain/examples/CurriculumRafael';
 import { SystemService } from './service/system.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { SystemService } from './service/system.service';
 export class AppComponent {
   title = 'curriculumApp';
   constructor(public systemService: SystemService) {
-    this.systemService.addCurriculum(Constants.curriculum());
+    this.systemService.addCurriculum(Constants.curriculum(CurriculumRafael.get()));
   }
 
 }

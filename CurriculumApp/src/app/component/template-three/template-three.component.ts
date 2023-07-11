@@ -1,5 +1,6 @@
 import { Component, ElementRef, EventEmitter, Output, ViewChild, OnInit, Input } from '@angular/core';
 import { Constants } from 'src/app/domain/Contants';
+import { CurriculumFlavia } from 'src/app/domain/examples/CurriculumFlavia';
 import { CurriculumRafael } from 'src/app/domain/examples/CurriculumRafael';
 import { Curriculum, Certificate, Personal, Experience, Education } from 'src/app/domain/Models';
 import { DateUtils } from 'src/app/domain/Utils';
@@ -21,9 +22,10 @@ export class TemplateThreeComponent implements OnInit {
   @Input("height")
   height = "100%";
 
-  configTitle: { background: string, color: string } = { background: Constants.colors[0].code, color: Constants.colors[0].code };
-  configScreen: { height: string, width: string } = { width: this.width, height: this.height };
   curriculum: Curriculum = Constants.curriculum();
+  configTitle: { background: string, color: string, fontFamily: string } = { background: Constants.colors[0].code, color: Constants.colors[0].code, fontFamily: Constants.getFontString(this.curriculum.configurations.font) };
+  configFont: { fontFamily: string } = { fontFamily: Constants.getFontString(this.curriculum.configurations.font) };
+  configScreen: { height: string, width: string } = { width: this.width, height: this.height };
   personal: Personal | null = null;
   certificates: Certificate[] = [];
   experiences: Experience[] = [];
@@ -58,8 +60,8 @@ export class TemplateThreeComponent implements OnInit {
   }
 
   private _updateCurriculum() {
-    let curriculum = CurriculumRafael.get();
-    this.defineconfiguration();
+    let curriculum = CurriculumFlavia.get();
+    // this.defineconfiguration();
     this.translateCurriculum(curriculum);
 
     this.personal = curriculum.personal;
@@ -137,7 +139,7 @@ export class TemplateThreeComponent implements OnInit {
       this.config = { background: bg, fontFamily: font };
       this.colorPrimary = { color: bg };
       this.backgroundSecundary = { background: this.hexToRgb(`#000000`, 0.3) };
-      this.configTitle = { background: this.hexToRgb(`#000000`, 0.3), color: bg };
+      this.configTitle = { background: this.hexToRgb(`#000000`, 0.3), color: bg, fontFamily: font };
     }
   }
 
