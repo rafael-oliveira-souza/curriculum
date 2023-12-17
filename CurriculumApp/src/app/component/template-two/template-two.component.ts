@@ -1,5 +1,6 @@
 import { Component, ElementRef, EventEmitter, Output, ViewChild, OnInit, Input } from '@angular/core';
 import { Constants } from 'src/app/domain/Contants';
+import { CurriculumGabriel } from 'src/app/domain/examples/CurriculumGabriel';
 import { CurriculumRafael } from 'src/app/domain/examples/CurriculumRafael';
 import { Curriculum, Certificate, Personal, Experience, Education } from 'src/app/domain/Models';
 import { DateUtils } from 'src/app/domain/Utils';
@@ -57,14 +58,18 @@ export class TemplateTwoComponent implements OnInit {
   }
 
   private _updateCurriculum() {
-    let curriculum = CurriculumRafael.get();
+    // let curriculum = CurriculumRafael.get();
+    let curriculum = CurriculumGabriel.get();
     this.defineconfiguration();
-    this.translateCurriculum(curriculum);
+    // this.translateCurriculum(curriculum);
 
     this.personal = curriculum.personal;
     this.certificates = curriculum.certificates;
     this.experiences = curriculum.experiences;
     this.educations = curriculum.educations;
+    this.curriculum = curriculum;
+    debugger
+    this.labels = Constants.getLabels(this.curriculum.configurations.language.code);
   }
 
   private translateCurriculum(curriculum: Curriculum) {

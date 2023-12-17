@@ -20,7 +20,7 @@ export enum LanguageLevel {
 }
 
 export enum LanguageEnum {
-  PORTUGUES = 'pt-br',
-  INGLES = 'en-us',
+  PORTUGUES = 'pt',
+  INGLES = 'en',
   ESPANHOL = 'es'
 }

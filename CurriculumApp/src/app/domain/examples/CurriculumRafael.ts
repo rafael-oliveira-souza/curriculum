@@ -26,7 +26,7 @@ export class CurriculumRafael {
 
 
     contacts.push(new KeyValue("Endereço", "QNL 12 Bloco B Apt 113, Brasilia/DF, Cep: 72156-212")); -
-      contacts.push(new KeyValue("Telefone", "+55(61)99232-2329"));
+      contacts.push(new KeyValue("Telefone", "+55 (61) 99232-2329"));
     contacts.push(new KeyValue("E-mail", "rafaelsoec@gmail.com"));
     contacts.push(new KeyValue("LinkedIn", "https://www.linkedin.com/in/rafael-souza-9a315116a/"));
 
@@ -55,9 +55,9 @@ export class CurriculumRafael {
     //   "JavaScript", "Python", "Prolog",
     //   "Ruby", "Scala", "TypeScript"
     // ]));
-    knowledges.push(new KeyValue("Metodologia Ágil", ["Scrum", "Kanban"]));
-    knowledges.push(new KeyValue("Serviços em Nuvem", ["Azure", "AWS"]));
-    knowledges.push(new KeyValue("Servidores", ["Red Hat JBoss Enterprise Application Platform", "Apache TomCat"]));
+    // knowledges.push(new KeyValue("Metodologia Ágil", ["Scrum", "Kanban"]));
+    // knowledges.push(new KeyValue("Serviços em Nuvem", ["Azure", "AWS"]));
+    // knowledges.push(new KeyValue("Servidores", ["Red Hat JBoss Enterprise Application Platform", "Apache TomCat"]));
     // knowledges.push(new KeyValue("Testes", [
     //   "Integração com Selenium.",
     //   "Comportament usando cucumber.",
@@ -72,7 +72,7 @@ export class CurriculumRafael {
       institution: "Universidade de Brasilia - UNB",
       address: "Brasilia, Distrito Federal",
       startDate: new Date("01/03/2015"),
-      endDate: new Date("01/06/2021"),
+      endDate: new Date("05/18/2022"),
       situation: EducationalSituation.CONCLUIDO
     });
     // educations.push({
@@ -85,49 +85,49 @@ export class CurriculumRafael {
     // });
 
     let experiences: Experience[] = [];
+    // experiences.push({
+    //   institution: "Analista de Sistemas Sênior",
+    //   address: "Brasilia, Distrito Federal - Brasil",
+    //   office: ` GlobalWeb Corp`,
+    //   startDate: new Date("01/06/2022"),
+    //   endDate: null,
+    //   description: ` Desenvolvimento de sistemas da Caixa Econômica Federal(DPVAT, Sistema de Financiamento Rural e PIX).
+    //   Desenvolvimento FullStack utilizando linguages de programação JAVA e Typescript com Angular Framework. Análise de problemas complexos e implementação de soluções para aprimorar
+    //   desempenho, estabilidade e usabilidade de software.`
+    // });
     experiences.push({
       institution: "Analista de Sistemas Sênior",
-      address: "Brasilia, Distrito Federal - Brasil",
-      office: ` GlobalWeb Corp`,
-      startDate: new Date("01/06/2022"),
+      address: "Brasilia - Brasil",
+      office: `Ernst & Young`,
+      startDate: new Date("02/21/2022"),
       endDate: null,
-      description: ` Desenvolvimento de sistemas da Caixa Econômica Federal(DPVAT, Sistema de Financiamento Rural e PIX).
-      Desenvolvimento FullStack utilizando linguages de programação JAVA e Typescript com Angular Framework. Análise de problemas complexos e implementação de soluções para aprimorar
-      desempenho, estabilidade e usabilidade de software.`
+      description: `Desenvolvimento de soluções de software de alta qualidade utilizando linguagem de programação JAVA, respeitando
+      padrões de codificação e melhores práticas; Análise de problemas complexos e implementação de soluções para aprimorar
+      desempenho, estabilidade e usabilidade de software. Criação de documentos de treinamento para o departamento para treinar membros em software e web
+      implementações. Desenvolvimento de softwares utilizando Integração continua com Microsoft Azure, Conteinerização utilizando Docker,
+       mensageria com apache kafka e serviços de nuvem com microsoft Azure `
     });
-    // experiences.push({
-    //   institution: "Analista de Sistemas Sênior",
-    //   address: "Brasilia - Brasil",
-    //   office: `Ernst & Young`,
-    //   startDate: new Date("09/05/2021"),
-    //   endDate: new Date("01/06/2022"),
-    //   description: `Desenvolvimento de soluções de software de alta qualidade utilizando linguagem de programação JAVA, respeitando
-    //   padrões de codificação e melhores práticas; Análise de problemas complexos e implementação de soluções para aprimorar
-    //   desempenho, estabilidade e usabilidade de software. Criação de documentos de treinamento para o departamento para treinar membros em software e web
-    //   implementações. Desenvolvimento de softwares utilizando Integração continua com Microsoft Azure, Conteinerização utilizando Docker,
-    //    mensageria com apache kafka e serviços de nuvem com microsoft Azure `
-    // });
-    // experiences.push({
-    //   institution: "Analista de Sistemas Sênior",
-    //   address: "São Paulo - Brasil",
-    //   office: ` PagSeguro PagBank`,
-    //   startDate: new Date("09/09/2020"),
-    //   endDate: new Date("09/05/2021"),
-    //   description: ` Desenvolvimento de sistemas voltados aos produtos
-    //         bancários do PagBank utilizando linguagem de programação Java.Análise de problemas complexos e implementação de soluções para aprimorar
-    //         desempenho, estabilidade e usabilidade de software..`
-    // });
-    // experiences.push({
-    //   institution: "Analista de Sistemas Sênior",
-    //   address: "São Paulo - Brasil",
-    //   office: ` Spread Tecnologia`,
-    //   startDate: new Date("01/01/2019"),
-    //   endDate: new Date("09/09/2020"),
-    //   description: ` Desenvolvimento de soluções de software de alta qualidade utilizando linguagens de programação Java e Typescript, respeitando
-    //   padrões de codificação e melhores práticas; Análise de problemas complexos e implementação de soluções para aprimorar
-    //   desempenho, estabilidade e usabilidade de software. Criação de documentos de treinamento para o departamento para treinar membros em software e web
-    //   implementações. `
-    // });
+    experiences.push({
+      institution: "Analista de Sistemas Sênior",
+      address: "São Paulo - Brasil",
+      office: ` PagSeguro PagBank`,
+      startDate: new Date("10/24/2021"),
+      endDate: new Date("02/05/2022"),
+      description: ` Desenvolvimento de sistemas voltados aos produtos
+            bancários do PagBank utilizando linguagem de programação Java.Análise de problemas complexos e implementação de soluções para aprimorar
+            desempenho, estabilidade e usabilidade de software..`
+    });
+    experiences.push({
+      institution: "Analista de Sistemas ",
+      address: "São Paulo - Brasil",
+      office: ` Spread Tecnologia`,
+      startDate: new Date("03/14/2019"),
+      endDate: new Date("09/24/2021"),
+      description: ` Desenvolvimento de soluções de software de alta qualidade utilizando linguagens de programação Java e Typescript, respeitando
+      padrões de codificação e melhores práticas; Análise de problemas complexos e implementação de soluções para aprimorar
+      desempenho, estabilidade e usabilidade de software. Criação de documentos de treinamento para o departamento para treinar membros em software e web
+      implementações. `
+    });
     // experiences.push({
     //   institution: "Analista de Sistemas Pleno",
     //   address: "São Paulo - Brasil",
@@ -138,26 +138,26 @@ export class CurriculumRafael {
     //   padrões de codificação e melhores práticas; Análise de problemas complexos e implementação de soluções para aprimorar
     //   desempenho, estabilidade e usabilidade de software. `
     // });
+    experiences.push({
+      institution: "Programador Júnior",
+      address: "Brasilia, Distrito Federal - Brasil",
+      office: ` Tivit`,
+      startDate: new Date("03/03/2018"),
+      endDate: new Date("03/01/2019"),
+      description: ` Desenvolvimento de sistemas voltados a criação de
+            ChatBots para a Caixa Econômica Federal utilizando linguagem de programação Java.
+            Uso de tecnologias de mercado utilizando padrões de codificação e melhores práticas`
+    });
+    experiences.push({
+      institution: "Desenvolvimento de Sistemas - Estágio ",
+      address: "Brasilia, Distrito Federal - Brasil",
+      office: ` Caixa Econômica Federal`,
+      startDate: new Date("10/10/2016"),
+      endDate: new Date("02/03/2018"),
+      description: ` Desenvolvimento de sistemas utilizando Linguagem de Programação Java  e banco SQL.`
+    });
     // experiences.push({
-    //   institution: "Programador Júnior",
-    //   address: "Brasilia, Distrito Federal - Brasil",
-    //   office: ` Tivit`,
-    //   startDate: new Date("09/09/2017"),
-    //   endDate: new Date("03/03/2018"),
-    //   description: ` Desenvolvimento de sistemas voltados a criação de
-    //         ChatBots para a Caixa Econômica Federal utilizando linguagem de programação Java.
-    //         Uso de tecnologias de mercado utilizando padrões de codificação e melhores práticas`
-    // });
-    // experiences.push({
-    //   institution: "Programador Júnior ",
-    //   address: "Brasilia, Distrito Federal - Brasil",
-    //   office: ` Caixa Econômica Federal`,
-    //   startDate: new Date("10/10/2016"),
-    //   endDate: new Date("08/08/2017"),
-    //   description: ` Desenvolvimento de sistemas utilizando Linguagem de Programação Java  e banco SQL.`
-    // });
-    // experiences.push({
-    //   institution: "Programador Júnior ",
+    //   institution: "Desenvolvimento de Sistemas - Estágio",
     //   address: "Brasilia, Distrito Federal - Brasil",
     //   office: `Fundação de Empreendimentos Científicos e
     //         Tecnológicos (Finatec)`,
@@ -175,16 +175,16 @@ export class CurriculumRafael {
     //         Ministração de aulas de matemática e física para
     //         alunos da rede pública do nível fundamental.`
     // });
-    // experiences.push({
-    //   institution: "Montador de Sistemas de Refrigeração",
-    //   address: "Brasilia, Distrito Federal - Brasil",
-    //   office: `Master Engenharia`,
-    //   startDate: new Date("03/03/2013"),
-    //   endDate: new Date("01/01/2014"),
-    //   description: `Montagem de equipamentos e manutenção de
-    //         sistemas de refrigeração. Programação de sistemas
-    //         de ar refrigerado.`
-    // });
+    experiences.push({
+      institution: "Montador de Sistemas de Refrigeração",
+      address: "Brasilia, Distrito Federal - Brasil",
+      office: `Master Engenharia`,
+      startDate: new Date("03/03/2013"),
+      endDate: new Date("01/01/2014"),
+      description: `Montagem de equipamentos e manutenção de
+            sistemas de refrigeração. Programação de sistemas
+            de ar refrigerado.`
+    });
     // experiences.push({
     //   institution: "Técnico de Laboratório de Informática - Estágio",
     //   address: "Brasilia, Distrito Federal - Brasil",

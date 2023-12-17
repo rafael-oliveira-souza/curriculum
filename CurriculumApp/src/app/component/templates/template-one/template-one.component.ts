@@ -1,6 +1,7 @@
 import { Component, ElementRef, EventEmitter, Output, ViewChild, OnInit, Input } from '@angular/core';
 import { Constants } from 'src/app/domain/Contants';
 import { CurriculumFlavia } from 'src/app/domain/examples/CurriculumFlavia';
+import { CurriculumGabriel } from 'src/app/domain/examples/CurriculumGabriel';
 import { CurriculumRafael } from 'src/app/domain/examples/CurriculumRafael';
 import { Curriculum, Certificate, Personal, Experience, Education } from 'src/app/domain/Models';
 import { DateUtils } from 'src/app/domain/Utils';
@@ -42,6 +43,7 @@ export class TemplateOneComponent implements OnInit {
   constructor(public systemService: SystemService) {
     this.systemService.getCurriculum()
       .subscribe(curr => {
+        debugger
         this.curriculum = curr;
         this._updateCurriculum();
       });
@@ -58,8 +60,9 @@ export class TemplateOneComponent implements OnInit {
   }
 
   private _updateCurriculum() {
+    let curriculum = CurriculumGabriel.get();
     // let curriculum = CurriculumRafael.get();
-    let curriculum = CurriculumFlavia.get();
+    // let curriculum = CurriculumFlavia.get();
     this.defineconfiguration();
     // this.translateCurriculum(curriculum);
 
@@ -68,6 +71,8 @@ export class TemplateOneComponent implements OnInit {
     this.experiences = curriculum.experiences;
     this.educations = curriculum.educations;
     this.curriculum = curriculum;
+    this.labels = Constants.getLabels(this.curriculum.configurations.language.code);
+
   }
 
   private translateCurriculum(curriculum: Curriculum) {
