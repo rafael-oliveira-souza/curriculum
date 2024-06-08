@@ -1,0 +1,18 @@
+<div class="">
+
+  <div class="noPrint">
+    <!-- <h1 class="text-center">Curriculum App</h1> -->
+    <app-configuration> </app-configuration>
+  </div>
+
+  <div class="container p-4  ">
+    <app-template-one *ngIf="selectedTemplate == 1"></app-template-one>
+    <app-template-two *ngIf="selectedTemplate == 2"></app-template-two>
+    <app-template-four *ngIf="selectedTemplate == 3"></app-template-four> 
+    <app-template-three *ngIf="selectedTemplate == 4"></app-template-three>
+  </div>
+  <app-curriculum-generator class="p-2"></app-curriculum-generator>
+
+</div>
+
+<router-outlet></router-outlet>

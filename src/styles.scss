@@ -1,0 +1,60 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+@media not print {
+	.print {
+		display: none;
+	}
+	.noPrint {
+		display: block;
+	}
+}
+
+@media print {
+	.noPrint {
+		display: none;
+	}
+	.print {
+		display: block;
+	}
+}
+
+html,
+body {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	margin: 0;
+	font-family: Roboto, "Helvetica Neue", sans-serif;
+	background: var(--bodyBackGroundColor);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.darken {
+	width: 100%;
+	filter: drop-shadow(8px 8px 10px gray);
+}
+
+.p-button-success {
+	background: rgb(32, 173, 32) !important;
+	border: none;
+}
+
+.p-button-danger {
+	background: rgb(206, 20, 20) !important;
+	border: none;
+}
+
+input,
+textarea {
+	width: 100%;
+	padding: 0.5rem 0.5rem;
+	border: 1px solid #ced4da;
+}
+
+.break-all{
+    word-break: break-all;
+}
